@@ -48,10 +48,10 @@
     container: document.querySelector('#viewer'),
   });
 
-  let new_panorama= new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1552288092-76e7d732366c');
-  let panorama = new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1509225770129-fbcf8a696c0b');
-
+  let panorama= new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1552288092-76e7d732366c');
   viewer.add(panorama);
+
+  let new_panorama = new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1509225770129-fbcf8a696c0b');
   
   let new_infospot1 = new PANOLENS.Infospot(200, PANOLENS.DataImage.Info);
   new_infospot1.position.set(1500, -800, -2000);
