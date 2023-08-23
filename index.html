@@ -70,15 +70,15 @@
   });
   panorama.add(new_infospot2);
 
-  let new_infospot3 = new PANOLENS.Infospot(200, PANOLENS.DataImage.Info);
-  new_infospot3.position.set(2000, -400, -2000);
-  new_infospot3.addHoverElement(document.querySelector('#new_infospot3'), 200);
-  panorama.addEventListener('leave', function () {
-    document.querySelectorAll('.infospot').forEach(function (infospot) {
-      infospot.style.display = 'none';
-    });
-  });
-  panorama.add(new_infospot3);
+//   let new_infospot3 = new PANOLENS.Infospot(200, PANOLENS.DataImage.Info);
+//   new_infospot3.position.set(2000, -400, -2000);
+//   new_infospot3.addHoverElement(document.querySelector('#new_infospot3'), 200);
+//   panorama.addEventListener('leave', function () {
+//     document.querySelectorAll('.infospot').forEach(function (infospot) {
+//       infospot.style.display = 'none';
+//     });
+//   });
+//   panorama.add(new_infospot3);
 
   viewer.add(panorama);
 
