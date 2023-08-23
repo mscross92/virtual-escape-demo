@@ -40,18 +40,19 @@
         fled the fighting. They returned to find their home, and most of the town, in ruins.
     </div>
 </div>
-
+<!-- panolens -->
 <script src="https://pchen66.github.io/js/three/three.min.js"></script>
 <script src="https://rawgit.com/pchen66/panolens.js/dev/build/panolens.min.js"></script>
+
 <script>
   const viewer = new PANOLENS.Viewer({
     container: document.querySelector('#viewer'),
   });
 
-  let panorama = new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1552288092-76e7d732366c');
+  let panorama = new PANOLENS.ImagePanorama('img/Equirectangular.JPG');
   viewer.add(panorama);
 
-  let new_panorama = new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1509225770129-fbcf8a696c0b');
+  let new_panorama = new PANOLENS.ImagePanorama('img/Equirectangular.JPG');
   let new_infospot1 = new PANOLENS.Infospot(200, PANOLENS.DataImage.Info);
   new_infospot1.position.set(1500, -800, -2000);
   new_infospot1.addEventListener('click', function () {
@@ -69,7 +70,7 @@
   new_panorama.add(new_infospot2);
   viewer.add(new_panorama);
 
-  panorama.link(new_panorama, new THREE.Vector3(200, -800, -2000), 200, 'https://images.unsplash.com/photo-1509225770129-fbcf8a696c0b');
+  panorama.link(new_panorama, new THREE.Vector3(200, -800, -2000), 200, 'img/Equirectangular.JPG');
   new_panorama.link(panorama, new THREE.Vector3(200, -800, -2000));
   
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
