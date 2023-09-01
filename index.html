@@ -11,7 +11,7 @@
     
 
     .site {
-      width:33%;
+      width:25%;
       height: 100%;
       float:right;
       position: relative;
@@ -19,7 +19,8 @@
       /* padding: 2rem; */
       display: grid;
       place-items: center;
-      background-color: #505050;
+      right: 5px;
+      /* background-color: #505050; */
     }
     .site::after {
       position: absolute;
@@ -36,16 +37,16 @@
       --black4: #505050;
 
       z-index: 1;
-      width: 95%;
-      height: 100%;
-      padding: 0 0.5rem;
+      width: 98%;
+      height: 98%;
+      padding: 0 0.8rem;
       border: 0.25rem solid var(--black5);
       border-radius: 1rem;
       display: flex;
       flex-direction: column;
-      background-color: #eaeaea;
+      background-color: white;
       /* box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.3); */
-      transition: all 0.3s;
+      /* transition: all 0.3s; */
     }
     .phone.-loooooong{
       height: 100%;
@@ -58,29 +59,20 @@
       border-radius: 999rem;
       background-color: var(--black4);
     }
-    .phone_screen {
-      position: relative;
-      flex: 1 0 auto;
-      background-color: var(--black4);
-    }
-    .phone_screen::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.0);
-      /* clip-path: polygon(70% 0, 100% 0%, 100% 100%, 30% 100%); */
-    }
     .phone_button {
       width: 1.5rem;
       height: 1.5rem;
       border: 2px solid var(--black4);
       border-radius: 50%;
       margin: 1rem auto;
+      position: top;
     }
+    .phone_screen {
+      position: relative;
+      flex: 1 0 auto;
+      background-color: var(--black4);
+    }
+
 
     iframe {
       width:100%;
@@ -90,7 +82,7 @@
 
 
     #viewer {
-        width: 67%;
+        width: 74%;
         height: 100%;
         float:left;
     }
