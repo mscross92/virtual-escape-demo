@@ -8,118 +8,17 @@
 
   <title>UCL Engineering | An Environment in Crisis</title>
 
-  <style>
-    html {
-      width: 100%;
-      height: 100vh;
-      /* overflow: hidden; */
-      margin: 0;
-      background-color: #505050;
-      padding: 0;
-      position:absolute;
-    }
+  <!-- Custom stylesheet -->
+	<link rel="stylesheet" type="text/css" href="src/styles.css" />
 
-    body {
-      width: 100%;
-      height: 100vh;
-      /* overflow: hidden; */
-      margin: 0;
-      background-color: #505050;
-      padding: 0;
-      position:absolute;
-    }
-    
+  <!-- Script dependencies -->
+  <!-- --Panolens-- -->
+  <script src="https://pchen66.github.io/js/three/three.min.js"></script>
+  <script src="https://rawgit.com/pchen66/panolens.js/dev/build/panolens.min.js"></script>
+  <!-- --Apperta Foundation EyeDraw-- -->
+  <script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/src/ED.js"></script>
+	<script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/src/OEEyeDraw.js"></script>
 
-    .site {
-      width:26%;
-      max-height: 100vh;
-      float:right;
-      position: relative;
-      min-height: 100vh;
-      /* padding: 2rem; */
-      display: grid;
-      place-items: center;
-      right: 5px;
-      background-color: #505050;
-    }
-    /* .site::after {
-      position: absolute;
-      content: "";
-      display: block;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 50%;
-      background-color: rgba(0, 0, 0, 0.1);
-    } */
-    .phone {
-      --black5: #404040;
-      --black4: #505050;
-      z-index: 1;
-      width: 98%;
-      height: 98%;
-      padding: 0 0.8rem;
-      border: 0.25rem solid var(--black5);
-      border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      background-color: white;
-      /* box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.3); */
-      /* transition: all 0.3s; */
-    }
-    /* .phone.-loooooong{
-      height: 100%;
-    } */
-
-    .phone_mic {
-      height: 0.25rem;
-      width: 4rem;
-      margin: 1rem auto;
-      border-radius: 999rem;
-      background-color: var(--black4);
-    }
-    .phone_button {
-      width: 1.5rem;
-      height: 1.5rem;
-      border: 2px solid var(--black4);
-      border-radius: 50%;
-      margin: 1rem auto;
-      position: top;
-    }
-    .phone_screen {
-      position: relative;
-      flex: 1 0 auto;
-      background-color: var(--black4);
-      max-height: 100%;
-    }
-
-
-    iframe {
-      width:100%;
-      height: 100%;
-      /* float:right; */
-    }
-
-
-    #viewer {
-      width: 73%;
-      height: 100%;
-      float:left;
-    }
-
-    #new_infospot2 {
-      max-width: 500px;
-      max-height: 500px;
-      min-width: 200px;
-      min-height: 250px;
-      background: #fff;
-      color: #000;
-      border-radius: 3px;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      padding: 20px;
-    }
-  </style>
 
 </head>
 
@@ -148,9 +47,6 @@
       <div class="phone_button"></div>
     </div>
   </div>
-
-  <script src="https://pchen66.github.io/js/three/three.min.js"></script>
-  <script src="https://rawgit.com/pchen66/panolens.js/dev/build/panolens.min.js"></script>
 
   <script>
     const viewer = new PANOLENS.Viewer({

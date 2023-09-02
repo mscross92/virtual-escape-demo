@@ -1,0 +1,96 @@
+html {
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    margin: 0;
+    background-color: #505050;
+    padding: 0;
+    position:absolute;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    margin: 0;
+    background-color: #505050;
+    padding: 0;
+    position:absolute;
+}
+  
+
+.site {
+    width:26%;
+    max-height: 100vh;
+    float:right;
+    position: relative;
+    min-height: 100vh;
+    /* padding: 2rem; */
+    display: grid;
+    place-items: center;
+    right: 5px;
+    background-color: #505050;
+}
+
+.phone {
+    --black5: #404040;
+    --black4: #505050;
+    z-index: 1;
+    width: 98%;
+    height: 98%;
+    padding: 0 0.8rem;
+    border: 0.25rem solid var(--black5);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* box-shadow: 0.5rem 0.5rem rgba(0, 0, 0, 0.3); */
+    /* transition: all 0.3s; */
+}
+
+.phone_mic {
+    height: 0.25rem;
+    width: 4rem;
+    margin: 1rem auto;
+    border-radius: 999rem;
+    background-color: var(--black4);
+  }
+  .phone_button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--black4);
+    border-radius: 50%;
+    margin: 1rem auto;
+    position: top;
+  }
+  .phone_screen {
+    position: relative;
+    flex: 1 0 auto;
+    background-color: var(--black4);
+    max-height: 100%;
+  }
+
+iframe {
+    width:100%;
+    height: 100%;
+    /* float:right; */
+}
+
+#viewer {
+    width: 73%;
+    height: 100%;
+    float:left;
+  }
+
+#new_infospot2 {
+    max-width: 500px;
+    max-height: 500px;
+    min-width: 200px;
+    min-height: 250px;
+    background: #fff;
+    color: #000;
+    border-radius: 3px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
+}
