@@ -130,9 +130,6 @@
     <div class="text">Functionality test 1-b (multiple pop outs).</div>
 </div>
 
-<!-- <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwqWprUuZcmhOu00Waa8w1mJUOEU2TUFRMEZBVTlFN0xXTEFCTFFSSUJTWC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> 
-</iframe>  -->
-
 <div class="site">
   <div class="phone">
     <div class="phone_mic"></div>
@@ -152,8 +149,9 @@
     container: document.querySelector('#viewer'),
   });
 
-  let panorama = new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1552288092-76e7d732366c');
-//   viewer.add(panorama);
+  let panorama = new PANOLENS.ImagePanorama('img/empty-conference-room_529539-71.jpg');
+  viewer.add(panorama);
+  
 
 //   let new_panorama = new PANOLENS.ImagePanorama('https://images.unsplash.com/photo-1509225770129-fbcf8a696c0b');
   
