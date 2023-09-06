@@ -8,28 +8,75 @@
 
   <title>UCL Engineering | An Environment in Crisis</title>
 
+  	<!-- The eyedraw stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/oe-eyedraw.css" />
+
   <!-- Custom stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/css/oe-eyedraw.css" />
-	<link rel="stylesheet" type="text/css" href="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/tests/other/css/style.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/css/oe-eyedraw.css" />
+	<link rel="stylesheet" type="text/css" href="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/tests/other/css/style.css" /> -->
 	<link rel="stylesheet" type="text/css" href="src/styles.css" />
+
+  <!-- Other dependent scripts -->
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/mustache.js"></script>
+	<script type="text/javascript" src="scripts/eventemitter2.js"></script>
+
+	<!-- Eyedraw -->
+	<script type="text/javascript" src="scripts/eyedraw.js"></script>
+	<script type="text/javascript" src="scripts/oe-eyedraw.js"></script>
+
+	<!-- Lists of scripts -->
+	<script src="scripts/pd.js"></script>
+	<script src="scripts/hx.js"></script>
 
   <!-- Script dependencies -->
   <!-- --Panolens-- -->
-  <script src="https://pchen66.github.io/js/three/three.min.js"></script>
-  <script src="https://rawgit.com/pchen66/panolens.js/dev/build/panolens.min.js"></script>
+  <!-- <script src="https://pchen66.github.io/js/three/three.min.js"></script> -->
+  <!-- <script src="https://rawgit.com/pchen66/panolens.js/dev/build/panolens.min.js"></script> -->
 
   <!-- --Apperta Foundation EyeDraw & dependent scripts-- -->
-  <script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/components/jquery/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/components/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/components/mustache/mustache.js"></script>
   <script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/components/eventemitter2/lib/eventemitter2.js"></script>
   <script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/js/dist/eyedraw.js"></script>
-	<script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/js/dist/oe-eyedraw.js"></script>
+	<script type="text/javascript" src="https://github.com/AppertaFoundation/eyedraw/blob/13224079bb1e47ee3f036dc3ebe19efc634e12a6/assets/js/dist/oe-eyedraw.js"></script> -->
 
 </head>
 
 
-<body>
+<body onload="eyeDrawController()">
 
+  <div id="ed_escape">
+    <!-- // eyedraw canvas     -->
+    <div class="ed-widget" id="eyedrawwidget_example" style="float: left;">
+      
+      <div id="editorED" class="ed-editor">
+        
+        <div class="ed-drawing-controls" style="display: none;">
+          <ul class="ed-toolbar-panel ed-drawing-toolbar" style="float: right;">
+            <li>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="ed-doodle-popup closed" id="doodlePop">
+        </div>
+  
+        <div>
+          <canvas
+          id="canvasRE"
+          class="ed-canvas-edit"
+          width="1400"
+          height="960"
+          tabindex="1"
+          >
+          </canvas>
+        </div>        
+      </div>
+    </div>
+  </div>
+  
+  
   <div id="viewer"></div>
 
   <div id="new_infospot2" class="infospot" style="display:none">
@@ -46,7 +93,10 @@
     <div class="phone">
       <div class="phone_mic"></div>
       <div class="phone_screen">
-        <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwqWprUuZcmhOu00Waa8w1mJUOEU2TUFRMEZBVTlFN0xXTEFCTFFSSUJTWC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> 
+        <!-- <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwqWprUuZcmhOu00Waa8w1mJUOEU2TUFRMEZBVTlFN0xXTEFCTFFSSUJTWC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> 
+        </iframe> -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdvFJ-Y-pF0iIaTKLIpjqt6Y9Jv2euSxp_UR_QrzTj0bQFC-Q/viewform?embedded=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; margin-top: -182px;">
+          Loading…
         </iframe>
       </div>
       <div class="phone_button"></div>
@@ -84,6 +134,34 @@
       viewer.enableControl(PANOLENS.CONTROLS.DEVICEORIENTATION);
 
   </script>  -->
+
+  <script>
+	
+    (function() {
+           
+          ED.init({
+        drawingName: "drawingEdit",
+        canvasId: "canvasRE",
+        eye: 0,
+        scale: 1,
+        idSuffix: "Hx",
+        isEditable: true,
+        focus: false,
+        graphicsPath: "../../img",
+        inputId: "ed_example_data",
+        onReadyCommandArray: [
+        ],
+        onDoodlesLoadedCommandArray: [],
+        bindingArray: {},
+        syncArray: {},
+        listenerArray: [],
+        offsetX: 0,
+        offsetY: 0,
+        toImage: false
+      }); 
+      
+    }.call(this));
+    </script>
 
 </body>
 
